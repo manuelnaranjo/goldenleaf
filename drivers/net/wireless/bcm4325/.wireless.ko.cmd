@@ -1,0 +1,1 @@
+cmd_drivers/net/wireless/bcm4325/wireless.ko := ../arm-2011.03/bin/arm-none-eabi-ld -EL -r  -T /home/gbs/Downloads/goldenleaf/scripts/module-common.lds --build-id -o drivers/net/wireless/bcm4325/wireless.ko drivers/net/wireless/bcm4325/wireless.o drivers/net/wireless/bcm4325/wireless.mod.o
