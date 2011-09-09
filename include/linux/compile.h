@@ -1,8 +1,8 @@
-/* This file is auto generated, version 1 */
+/* This file is auto generated, version 7 */
 /*  PREEMPT */
 #define UTS_MACHINE "arm"
-#define UTS_VERSION "#1 PREEMPT Thu Sep 8 19:17:10 AMT 2011"
-#define LINUX_COMPILE_TIME "19:17:10"
+#define UTS_VERSION "#7 PREEMPT Fri Sep 9 02:42:41 AMT 2011"
+#define LINUX_COMPILE_TIME "02:42:41"
 #define LINUX_COMPILE_BY "lg-electronics"
 #define LINUX_COMPILE_HOST "goldenleaf"
 #define LINUX_COMPILE_DOMAIN
