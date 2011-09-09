@@ -87,3 +87,4 @@ arch/arm/boot/compressed/vmlinux
 arch/arm/boot/compressed/piggy.xzkern
 include/linux/compile.h
 arch/arm/boot/compressed/piggy.lzma
+arch/arm/boot/zImage
