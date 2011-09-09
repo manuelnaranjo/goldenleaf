@@ -1,7 +1,7 @@
 /*
  * Automatically generated C config: don't edit
  * Linux kernel version: 2.6.32.9
- * Fri Sep  9 02:40:16 2011
+ * Fri Sep  9 03:22:07 2011
  */
 #define AUTOCONF_INCLUDED
 #define CONFIG_VIDEO_V4L1_COMPAT 1
@@ -292,6 +292,7 @@
 #define CONFIG_SCSI_DMA 1
 #define CONFIG_IP_NF_TARGET_REDIRECT 1
 #define CONFIG_DEFAULT_IOSCHED "noop"
+#define CONFIG_CRYPTO_TWOFISH 1
 #define CONFIG_CRYPTO_HASH 1
 #define CONFIG_UNIX98_PTYS 1
 #define CONFIG_NETFILTER_XT_MATCH_STATE 1
@@ -399,6 +400,7 @@
 #define CONFIG_TMPFS 1
 #define CONFIG_GENERIC_TIME 1
 #define CONFIG_GENERIC_GPIO 1
+#define CONFIG_CRYPTO_TWOFISH_COMMON 1
 #define CONFIG_SLIP_COMPRESSED 1
 #define CONFIG_DUMMY 1
 #define CONFIG_BT_HCIUART_BCSP 1

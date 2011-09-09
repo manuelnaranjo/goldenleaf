@@ -3401,6 +3401,7 @@
 0x00000000	hci_unregister_proto	vmlinux	EXPORT_SYMBOL
 0x00000000	neigh_ifdown	vmlinux	EXPORT_SYMBOL
 0x00000000	snd_pcm_hw_constraint_ratnums	vmlinux	EXPORT_SYMBOL
+0x00000000	twofish_setkey	vmlinux	EXPORT_SYMBOL_GPL
 0x00000000	jbd2_journal_extend	vmlinux	EXPORT_SYMBOL
 0x00000000	do_kern_mount	vmlinux	EXPORT_SYMBOL_GPL
 0x00000000	nf_conntrack_l3proto_register	vmlinux	EXPORT_SYMBOL_GPL
