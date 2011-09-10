@@ -447,7 +447,7 @@ int __sysfs_add_one(struct sysfs_addrm_cxt *acxt, struct sysfs_dirent *sd)
  *
  *	XXX: does no error checking on @path size
  */
-/*static char *sysfs_pathname(struct sysfs_dirent *sd, char *path)
+static char *sysfs_pathname(struct sysfs_dirent *sd, char *path)
 {
 	if (sd->s_parent) {
 		sysfs_pathname(sd->s_parent, path);
@@ -456,7 +456,7 @@ int __sysfs_add_one(struct sysfs_addrm_cxt *acxt, struct sysfs_dirent *sd)
 	strcat(path, sd->s_name);
 	return path;
 }
-*/
+
 /**
  *	sysfs_add_one - add sysfs_dirent to parent
  *	@acxt: addrm context to use

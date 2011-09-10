@@ -604,7 +604,7 @@ static void yaffs_VerifyObjectHeader(yaffs_Object *obj, yaffs_ObjectHeader *oh, 
 }
 
 
-/*
+
 static int yaffs_VerifyTnodeWorker(yaffs_Object *obj, yaffs_Tnode *tn,
 					__u32 level, int chunkOffset)
 {
@@ -633,7 +633,7 @@ static int yaffs_VerifyTnodeWorker(yaffs_Object *obj, yaffs_Tnode *tn,
 				__u32 theChunk = yaffs_GetChunkGroupBase(dev, tn, i);
 
 				if (theChunk > 0) {
-//					 T(~0,(TSTR("verifying (%d:%d) %d"TENDSTR),tags.objectId,tags.chunkId,theChunk));
+					/* T(~0,(TSTR("verifying (%d:%d) %d"TENDSTR),tags.objectId,tags.chunkId,theChunk)); */
 					yaffs_ReadChunkWithTagsFromNAND(dev, theChunk, NULL, &tags);
 					if (tags.objectId != objectId || tags.chunkId != chunkOffset) {
 						T(~0, (TSTR("Object %d chunkId %d NAND mismatch chunk %d tags (%d:%d)"TENDSTR),
@@ -649,7 +649,7 @@ static int yaffs_VerifyTnodeWorker(yaffs_Object *obj, yaffs_Tnode *tn,
 	return ok;
 
 }
-*/
+
 
 static void yaffs_VerifyFile(yaffs_Object *obj)
 {
@@ -1576,7 +1576,6 @@ static int yaffs_FindChunkInGroup(yaffs_Device *dev, int theChunk,
  * Returns 0 if it stopped early due to hitting the limit and the delete is incomplete.
  */
 
-/*
 static int yaffs_DeleteWorker(yaffs_Object *in, yaffs_Tnode *tn, __u32 level,
 			      int chunkOffset, int *limit)
 {
@@ -1663,7 +1662,7 @@ static int yaffs_DeleteWorker(yaffs_Object *in, yaffs_Tnode *tn, __u32 level,
 	return 1;
 
 }
-*/
+
 static void yaffs_SoftDeleteChunk(yaffs_Device *dev, int chunk)
 {
 	yaffs_BlockInfo *theBlock;

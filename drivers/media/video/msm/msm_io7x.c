@@ -194,7 +194,7 @@ int msm_camio_sensor_clk_off(struct platform_device *pdev)
 void msm_camio_disable(struct platform_device *pdev)
 {
  	struct msm_camera_sensor_info *sinfo = pdev->dev.platform_data;
-// 	struct msm_camera_device_platform_data *camdev = sinfo->pdata; 
+ 	struct msm_camera_device_platform_data *camdev = sinfo->pdata; 
  
 	iounmap(appbase);
  	release_mem_region(camio_ext.appphy, camio_ext.appsz);

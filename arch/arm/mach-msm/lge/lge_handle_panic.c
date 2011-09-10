@@ -198,7 +198,7 @@ static void display_update(void)
 
 void msm_pm_flush_console(void);
 
-/*static int display_panic_reason(struct notifier_block *this, unsigned long event,
+static int display_panic_reason(struct notifier_block *this, unsigned long event,
 		void *ptr)
 {
 	struct vc_data *vc;
@@ -215,9 +215,9 @@ void msm_pm_flush_console(void);
 	unsigned long flags;
 	struct membank *bank = &meminfo.bank[0];
 
-//	if direct display in kernel or lk is not enabled, return immediately
+	/* if direct display in kernel or lk is not enabled, return immediately */
 	if (!display_lk_enable && !display_kernel_enable) {
-//		don't display and return
+		/* don't display and return */
 		return NOTIFY_DONE;
 	}
 
@@ -228,7 +228,7 @@ void msm_pm_flush_console(void);
 	spin_lock_irqsave(&lge_panic_lock, flags);
 	bust_spinlocks(1);
 
-//	 initial variables
+	/* initial variables */
 	ram_console_buffer = get_ram_console_buffer();
 
 	start = ram_console_buffer->start;
@@ -243,7 +243,7 @@ void msm_pm_flush_console(void);
 	else 
 		display_size = (size - report_start) + start;
 
-//	 store kernel log to buffer which will be used by lk loader 
+	/* store kernel log to buffer which will be used by lk loader */
 	if (display_lk_enable) {
 		panic_dump_log->magic_key = PANIC_MAGIC_KEY;
 		panic_dump_log->size = display_size;
@@ -251,7 +251,7 @@ void msm_pm_flush_console(void);
 		memset(store_buffer, 0x00, display_size * 2);
 		lge_set_reboot_reason(bank->size);
 
-		if (ptr == CRASH_ARM9) // arm9 has crashed
+		if (ptr == CRASH_ARM9) /* arm9 has crashed */
 			panic_dump_log->magic_key = CRASH_ARM9;
 
 		if (report_start < start) {
@@ -262,9 +262,9 @@ void msm_pm_flush_console(void);
 		}
 	}
 
-//	 if direct display in kernel is not enabled, return immediately
+	/* if direct display in kernel is not enabled, return immediately */
 	if (!display_kernel_enable) {
-//		 don't display and return 
+		/* don't display and return */
 		bust_spinlocks(0);
 		spin_unlock_irqrestore(&lge_panic_lock, flags);
 		//mdelay(1500);
@@ -272,12 +272,12 @@ void msm_pm_flush_console(void);
 		return NOTIFY_DONE;
 	}
 
-//	 display in kernel start 
+	/* display in kernel start */
 	vc = vc_cons[PANIC_DUMP_CONSOLE].d;
 	display_buffer =
 		(unsigned char *)kzalloc(vc->vc_cols * sizeof(unsigned short), GFP_ATOMIC);
 
-//	 blank screen 
+	/* blank screen */
 	for (index = 0; index < vc->vc_rows; index++)
 		display_line((unsigned short *)display_buffer, index);
 
@@ -347,9 +347,9 @@ reboot_system:
 	bust_spinlocks(0);
 	spin_unlock_irqrestore(&lge_panic_lock, flags);
 	
-//	 * wait reboot key pushed
-//	 * if 20 second is elapsed after panic in not pushed,
-//	 * reboot automatically
+	/* wait reboot key pushed
+	 * if 20 second is elapsed after panic in not pushed,
+	 * reboot automatically */
 	time_count = 40;
 	while(1) {
 		mdelay(500);
@@ -363,7 +363,6 @@ reboot_system:
 
 	return NOTIFY_DONE;
 }
-*/
 
 #ifdef CONFIG_LGE_HIDDEN_RESET_PATCH
 static int copy_frame_buffer(struct notifier_block *this, unsigned long event,

@@ -475,7 +475,7 @@ static int acm_cdc_notify(struct f_acm *acm, u8 type, u16 value,
 	struct usb_ep			*ep = acm->notify;
 	struct usb_request		*req;
 	struct usb_cdc_notification	*notify;
-//	const unsigned			len = sizeof(*notify) + length;
+	const unsigned			len = sizeof(*notify) + length;
 	void				*buf;
 	int				status;
 /* LGE_CHANGE_S [hyunhui.park@lge.com] 2010-07-18, Apply Patch for LG ACM */

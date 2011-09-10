@@ -416,7 +416,7 @@ static int gser_notify(struct f_gser *gser, u8 type, u16 value,
 	struct usb_ep			*ep = gser->notify;
 	struct usb_request		*req;
 	struct usb_cdc_notification	*notify;
-//	const unsigned			len = sizeof(*notify) + length;
+	const unsigned			len = sizeof(*notify) + length;
 	void				*buf;
 	int				status;
 	struct usb_composite_dev *cdev = gser->port.func.config->cdev;
