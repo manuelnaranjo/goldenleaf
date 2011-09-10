@@ -77,10 +77,13 @@ struct hitachi_display_table {
 
 #define HITACHI_REGFLAG_END_OF_TABLE      0xFFFF   // END OF REGISTERS MARKER
 
+/*
 static struct hitachi_display_table mddi_hitachi_2c[] = {
 	{0x2c, 4, {0x00, 0x00, 0x00, 0x00}},
 	{HITACHI_REGFLAG_END_OF_TABLE, 0x00, {}}
 };
+*/
+
 static struct hitachi_display_table mddi_hitachi_position_table[] = {
 	// set column address 
 	{0x2a,  4, {0x00, 0x00, 0x01, 0x3f}},

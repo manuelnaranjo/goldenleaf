@@ -317,7 +317,7 @@ static ssize_t print_switch_name(struct switch_dev *sdev, char *buf)
 
 static ssize_t print_switch_state(struct switch_dev *sdev, char *buf)
 {
-	struct usb_info *ui = the_usb_info;
+//	struct usb_info *ui = the_usb_info;
 
 	return sprintf(buf, "%s\n",
 			(sdev->state ? "online" : "offline"));
@@ -521,15 +521,16 @@ static int usb_ep_get_stall(struct msm_endpoint *ept)
 		return (CTRL_RXS & n) ? 1 : 0;
 }
 
+/*
 static unsigned ulpi_read(struct usb_info *ui, unsigned reg)
 {
 	unsigned timeout = 100000;
 
-	/* initiate read operation */
+//	 initiate read operation 
 	writel(ULPI_RUN | ULPI_READ | ULPI_ADDR(reg),
 	       USB_ULPI_VIEWPORT);
 
-	/* wait for completion */
+	 wait for completion 
 	while ((readl(USB_ULPI_VIEWPORT) & ULPI_RUN) && (--timeout))
 		;
 
@@ -539,6 +540,7 @@ static unsigned ulpi_read(struct usb_info *ui, unsigned reg)
 	}
 	return ULPI_DATA_READ(readl(USB_ULPI_VIEWPORT));
 }
+*/
 
 static void ulpi_write(struct usb_info *ui, unsigned val, unsigned reg)
 {

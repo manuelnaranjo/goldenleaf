@@ -207,7 +207,7 @@ static uint32_t msm_sdcc_setup_power(struct device *dv, unsigned int vdd)
 {
 	int rc = 0;
 	struct platform_device *pdev;
-	static int first_setup = 1;
+	//static int first_setup = 1;
 
 	pdev = container_of(dv, struct platform_device, dev);
 	msm_sdcc_setup_gpio(pdev->id, !!vdd);

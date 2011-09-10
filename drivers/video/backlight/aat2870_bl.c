@@ -534,6 +534,7 @@ static void aat28xx_poweron(struct aat28xx_driver_data *drvdata)
 	}
 }
 
+/*
 static void aat28xx_poweroff(struct aat28xx_driver_data *drvdata)
 {
 	if (!drvdata || drvdata->state == POWEROFF_STATE)
@@ -553,6 +554,7 @@ static void aat28xx_poweroff(struct aat28xx_driver_data *drvdata)
 	mdelay(6);
 	drvdata->state = POWEROFF_STATE;
 }
+*/
 
 /* This function provide sleep enter routine for power management. */
 static void aat28xx_sleep(struct aat28xx_driver_data *drvdata)
