@@ -80,9 +80,9 @@ struct panic_log_dump {
 	unsigned char buffer[0];
 };
 
-//static struct panic_log_dump *panic_dump_log;
+static struct panic_log_dump *panic_dump_log;
 static int (*reboot_key_detect)(void) = NULL;
-/*static char *panic_init_strings[] = {
+static char *panic_init_strings[] = {
 	"K e r n e l   p a n i c   h a s   b e e n   g e n e r a t e d . . . ",
 	"F o l l o w i n g   m e s s a g e s   s h o w   c p u   c o n t e x t ",
 	"a n d   b a c k t r a c e s   o f   f u n c t i o n   c a l l ",
@@ -93,9 +93,9 @@ static int (*reboot_key_detect)(void) = NULL;
 	"  ",
 	"  ",
 	"  ",
-};*/
+};
 
-//static DEFINE_SPINLOCK(lge_panic_lock);
+static DEFINE_SPINLOCK(lge_panic_lock);
 
 static int dummy_arg;
 static int gen_panic(const char *val, struct kernel_param *kp)
@@ -139,9 +139,9 @@ static int __init check_hidden_reset(char *reset_mode)
 __setup("lge.hreset=", check_hidden_reset);
 #endif
 
-//static struct ram_console_buffer *ram_console_buffer = 0;
+static struct ram_console_buffer *ram_console_buffer = 0;
 
-/*static int get_panic_report_start(uint32_t start, uint32_t size, uint8_t *data)
+static int get_panic_report_start(uint32_t start, uint32_t size, uint8_t *data)
 {
 	int report_start;
 	uint8_t buffer[8];
@@ -158,7 +158,7 @@ __setup("lge.hreset=", check_hidden_reset);
 		}
 	}
 
-//	 because ram cosole is ring buffer 
+	/* because ram cosole is ring buffer */
 	for (i = 0; i < 4; i++) {
 		buffer[i] = data[(size - 4) + i];
 		buffer[i + 4] = data[i];
@@ -173,9 +173,9 @@ __setup("lge.hreset=", check_hidden_reset);
 	}
 
 	return report_start;
-}*/
+}
 
-/*static void display_line(unsigned short *line_buffer, int line_num)
+static void display_line(unsigned short *line_buffer, int line_num)
 {
 	struct vc_data *vc;
 	struct fb_info *info = registered_fb[0];
@@ -186,15 +186,15 @@ __setup("lge.hreset=", check_hidden_reset);
 	ops->graphics = 0;
 	ops->putcs(vc, info, (unsigned short *)line_buffer, 
 			vc->vc_cols, line_num, 0, 1, 0);
-}*/
+}
 
-/*static void display_update(void)
+static void display_update(void)
 {
 	struct fb_info *info = registered_fb[0];
 	struct fbcon_ops *ops = info->fbcon_par;
 
 	ops->update_start(info);
-}*/
+}
 
 void msm_pm_flush_console(void);
 
