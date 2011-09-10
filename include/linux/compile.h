@@ -1,9 +1,9 @@
-/* This file is auto generated, version 3 */
+/* This file is auto generated, version 5 */
 /*  PREEMPT */
 #define UTS_MACHINE "arm"
-#define UTS_VERSION "#3 PREEMPT Sat Sep 10 12:18:19 AMT 2011"
-#define LINUX_COMPILE_TIME "12:18:19"
+#define UTS_VERSION "#5 PREEMPT Sat Sep 10 13:14:15 AMT 2011"
+#define LINUX_COMPILE_TIME "13:14:15"
 #define LINUX_COMPILE_BY "lg-electronics"
 #define LINUX_COMPILE_HOST "goldenleaf"
 #define LINUX_COMPILE_DOMAIN
-#define LINUX_COMPILER "gcc version 4.5.2 (Sourcery G++ Lite 2011.03-42) "
+#define LINUX_COMPILER "gcc version 4.6.2 20110813 (prerelease) (Linaro GCC 4.6-2011.08) "

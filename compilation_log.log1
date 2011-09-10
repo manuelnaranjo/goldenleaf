@@ -1,0 +1,13 @@
+scripts/mod/modpost.c:1562:12: warning: ignoring return value of ‘asprintf’, declared with attribute warn_unused_result [-Wunused-result]
+scripts/mod/modpost.c:1982:10: warning: ignoring return value of ‘asprintf’, declared with attribute warn_unused_result [-Wunused-result]
+init/main.c:711:10: warning: 'calltime.tv64' may be used uninitialized in this function
+arch/arm/mm/dma-mapping.c:544:9: warning: 'inner_op' may be used uninitialized in this function
+arch/arm/mm/dma-mapping.c:545:9: warning: 'outer_op' may be used uninitialized in this function
+arch/arm/mm/dma-mapping.c:583:9: warning: 'inner_op' may be used uninitialized in this function
+arch/arm/mm/dma-mapping.c:584:9: warning: 'outer_op' may be used uninitialized in this function
+arch/arm/mm/alignment.c:716:21: warning: 'offset.un' may be used uninitialized in this function
+kernel/hrtimer.c:1251:24: warning: 'now.tv64' may be used uninitialized in this function
+net/packet/af_packet.c:665:33: warning: 'hdrlen' may be used uninitialized in this function
+net/sunrpc/svcsock.c:694:11: warning: 'level' may be used uninitialized in this function
+net/sunrpc/svcsock.c:694:18: warning: 'optname' may be used uninitialized in this function
+net/sunrpc/svcauth_unix.c:682:23: warning: 'sin6' may be used uninitialized in this function

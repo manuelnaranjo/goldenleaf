@@ -559,6 +559,7 @@ static void ulpi_write(struct usb_info *ui, unsigned val, unsigned reg)
 		ERROR("ulpi_write: timeout\n");
 }
 
+/*
 static void ulpi_init(struct usb_info *ui)
 {
 	int *seq = ui->phy_init_seq;
@@ -573,6 +574,7 @@ static void ulpi_init(struct usb_info *ui)
 		seq += 2;
 	}
 }
+*/
 
 static void init_endpoints(struct usb_info *ui)
 {
