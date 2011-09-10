@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.32.9
-# Sat Sep 10 10:15:08 2011
+# Sat Sep 10 13:29:39 2011
 #
 CONFIG_ARM=y
 CONFIG_SYS_SUPPORTS_APM_EMULATION=y
@@ -94,7 +94,7 @@ CONFIG_COMPAT_BRK=y
 CONFIG_SLUB=y
 # CONFIG_SLOB is not set
 # CONFIG_PROFILING is not set
-CONFIG_HAVE_CLK=y
+# CONFIG_HAVE_CLK is not set
 
 #
 # GCOV-based kernel profiling
@@ -1069,7 +1069,6 @@ CONFIG_INPUT_TOUCHSCREEN=y
 # CONFIG_TOUCHSCREEN_TOUCHIT213 is not set
 # CONFIG_TOUCHSCREEN_TSC2007 is not set
 # CONFIG_TOUCHSCREEN_MSM_LEGACY is not set
-# CONFIG_TOUCHSCREEN_W90X900 is not set
 CONFIG_TOUCHSCREEN_MCS6000=y
 # CONFIG_TOUCHSCREEN_CY8C_TS is not set
 CONFIG_INPUT_MISC=y
@@ -1158,7 +1157,6 @@ CONFIG_I2C_ALGOBIT=y
 #
 # I2C system bus drivers (mostly embedded / system-on-chip)
 #
-# CONFIG_I2C_DESIGNWARE is not set
 CONFIG_I2C_GPIO=y
 CONFIG_I2C_MSM=y
 # CONFIG_I2C_OCORES is not set
@@ -1229,8 +1227,6 @@ CONFIG_SSB_POSSIBLE=y
 # CONFIG_HTC_PASIC3 is not set
 # CONFIG_TWL4030_CORE is not set
 # CONFIG_MFD_TMIO is not set
-# CONFIG_MFD_T7L66XB is not set
-# CONFIG_MFD_TC6387XB is not set
 # CONFIG_PMIC_DA903X is not set
 # CONFIG_MFD_WM8400 is not set
 # CONFIG_MFD_WM831X is not set
