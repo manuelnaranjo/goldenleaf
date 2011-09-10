@@ -1,1 +1,0 @@
-cmd_drivers/usb/core/usbcore.ko := ../arm-2011.03/bin/arm-none-eabi-ld -EL -r  -T /home/gbs/Downloads/goldenleaf/scripts/module-common.lds --build-id -o drivers/usb/core/usbcore.ko drivers/usb/core/usbcore.o drivers/usb/core/usbcore.mod.o

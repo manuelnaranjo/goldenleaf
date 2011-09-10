@@ -1,1 +1,0 @@
-cmd_drivers/leds/built-in.o :=  ../arm-2011.03/bin/arm-none-eabi-ld -EL    -r -o drivers/leds/built-in.o drivers/leds/led-core.o drivers/leds/led-class.o drivers/leds/leds-cpld.o drivers/leds/leds-msm-pmic.o 

@@ -42,10 +42,6 @@
 #include "mdp4.h"
 #endif
 
-#ifdef CONFIG_HAS_EARLYSUSPEND
-#undef CONFIG_HAS_EARLYSUSPEND
-#endif
-
 static struct clk *mdp_clk;
 static struct clk *mdp_pclk;
 

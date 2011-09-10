@@ -1,1 +1,0 @@
-cmd_drivers/input/built-in.o :=  ../arm-2011.03/bin/arm-none-eabi-ld -EL    -r -o drivers/input/built-in.o drivers/input/input-core.o drivers/input/evdev.o drivers/input/keyboard/built-in.o drivers/input/touchscreen/built-in.o drivers/input/misc/built-in.o drivers/input/sensor/built-in.o drivers/input/keyreset.o 
