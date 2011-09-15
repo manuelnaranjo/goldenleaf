@@ -777,9 +777,9 @@ static int mddi_hitachi_lcd_init(void)
   * The set values on LCD are both 8, but we use 6 for MDDI in order to secure timing margin.
   * 2010-08-21, minjong.gong@lge.com
   */
-		pinfo->lcd.v_back_porch = 6;
-		pinfo->lcd.v_front_porch = 6;
-		pinfo->lcd.v_pulse_width = 4;
+//		pinfo->lcd.v_back_porch = 6;
+//		pinfo->lcd.v_front_porch = 6;
+//		pinfo->lcd.v_pulse_width = 4;
 
 		pinfo->lcd.hw_vsync_mode = TRUE;
 		pinfo->lcd.vsync_notifier_period = (1 * HZ);
