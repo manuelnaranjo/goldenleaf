@@ -43,8 +43,8 @@ config OPROFILE_EVENT_MULTIPLEX
 
 	  If unsure, say N.
 
-#config HAVE_OPROFILE
-#	bool
+config HAVE_OPROFILE
+	bool
 
 config KPROBES
 	bool "Kprobes"
@@ -79,18 +79,18 @@ config HAVE_EFFICIENT_UNALIGNED_ACCESS
 config HAVE_SYSCALL_WRAPPERS
 	bool
 
-#config KRETPROBES
-#	def_bool y
-#	depends on KPROBES && HAVE_KRETPROBES
+config KRETPROBES
+	def_bool y
+	depends on KPROBES && HAVE_KRETPROBES
 
 config HAVE_IOREMAP_PROT
 	bool
 
-#config HAVE_KPROBES
-#	bool
+config HAVE_KPROBES
+	bool
 
-#config HAVE_KRETPROBES
-#	bool
+config HAVE_KRETPROBES
+	bool
 
 #
 # An arch should select this if it provides all these things:
