@@ -182,7 +182,7 @@ SUBARCH := arm
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 export KBUILD_BUILDHOST := $(SUBARCH)
 ARCH		?= $(SUBARCH)
-CROSS_COMPILE	?= ../arm-2011.03/bin/arm-none-eabi-
+CROSS_COMPILE	?= ../android-toolchain-eabi/bin/arm-eabi-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
@@ -523,7 +523,20 @@ endif # $(dot-config)
 all: vmlinux
 
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
-KBUILD_CFLAGS	+= -Os
+KBUILD_CFLAGS	+= -Os \
+			-pipe \
+			-marm \
+			-march=armv6zk \
+			-mtune=arm1176jzf-s \
+			-mfpu=vfp \
+			-funsafe-loop-optimizations \
+			-funroll-loops \
+			-mfloat-abi=softfp \
+			-fomit-frame-pointer \
+			-D__ARM_ARCH_5__ \
+			-D__ARM_ARCH_5T__ \
+			-D__ARM_ARCH_5E__ \
+			-D__ARM_ARCH_5TE__
 else
 KBUILD_CFLAGS	+= -O2
 endif
