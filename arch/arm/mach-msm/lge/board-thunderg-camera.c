@@ -24,7 +24,12 @@
 
 #include "board-thunderg.h"
 
-int mclk_rate = 24000000;
+#define ISX005_24M 24000000
+#define ISX005_26M 26000000
+#define ISX005_27M 27000000
+
+
+int mclk_rate = ISX005_24M;
 
 DEFINE_MUTEX(camera_power_mutex);
 int camera_power_state;

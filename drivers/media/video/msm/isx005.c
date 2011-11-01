@@ -1641,8 +1641,8 @@ static struct i2c_driver isx005_i2c_driver = {
 static ssize_t pclk_show(struct device *dev, struct device_attribute *attr,
 	char *buf)
 {
-	printk(KERN_INFO "mclk_rate = %d\n", pclk_rate);
-	return 0;
+	printk(KERN_INFO "pclk_rate = %d\n", pclk_rate);
+	return scnprintf(buf, PAGE_SIZE, "%d\n", pclk_rate);
 }
 
 static ssize_t pclk_store(struct device *dev, struct device_attribute *attr,
@@ -1663,7 +1663,7 @@ static ssize_t mclk_show(struct device *dev, struct device_attribute *attr,
 	char *buf)
 {
 	printk(KERN_INFO "mclk_rate = %d\n", mclk_rate);
-	return 0;
+	return scnprintf(buf, PAGE_SIZE, "%d\n", mclk_rate);
 }
 
 static ssize_t mclk_store(struct device *dev, struct device_attribute *attr,
@@ -1684,7 +1684,7 @@ static ssize_t always_on_show(struct device *dev,
 	struct device_attribute *attr, char *buf)
 {
 	printk(KERN_INFO "always_on = %d\n", always_on);
-	return 0;
+	return scnprintf(buf, PAGE_SIZE, "%d\n", always_on);
 }
 
 static ssize_t always_on_store(struct device *dev,
