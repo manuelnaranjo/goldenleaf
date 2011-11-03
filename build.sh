@@ -9,10 +9,9 @@ cp $CONFIG .config
 
 JOBS="$(grep 'processor' /proc/cpuinfo | wc -l)"
 
-make ARCH=arm CROSS_COMPILE=$CCOMPILER -j${JOBS} clean
-make ARCH=arm CROSS_COMPILE=$CCOMPILER -j${JOBS} oldconfig
-
 if [ -n "$CONFIGURE" ]; then
+    make ARCH=arm CROSS_COMPILE=$CCOMPILER -j${JOBS} clean
+    make ARCH=arm CROSS_COMPILE=$CCOMPILER -j${JOBS} oldconfig
     make ARCH=arm CROSS_COMPILE=$CCOMPILER -j${JOBS} menuconfig
 fi
 
