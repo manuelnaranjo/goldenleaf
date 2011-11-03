@@ -221,6 +221,7 @@ static int isx005_reg_init(void)
 	int rc = 0;
 	int i;
 
+    CDBG("isx005_reg_init thunder[g,a] mode\n");
 	/* Configure sensor for Initial setting (PLL, Clock, etc) */
 	for (i = 0; i < isx005_regs.init_reg_settings_size; ++i) {
 		rc = isx005_i2c_write(isx005_client->addr,
@@ -237,6 +238,7 @@ static int isx005_reg_init(void)
 #else
 static int isx005_reg_init(void)
 {
+    CDBG("isx005_reg_init, pclk %d\n", pclk_rate);
 	int rc = 0;
 	int i;
 
@@ -1648,11 +1650,46 @@ static ssize_t pclk_show(struct device *dev, struct device_attribute *attr,
 static ssize_t pclk_store(struct device *dev, struct device_attribute *attr,
 	const char *buf, size_t size)
 {
-	int value;
+	int value, rc, i;
 
 	sscanf(buf, "%d", &value);
-	pclk_rate = value;
+	if (value == 27) {
+		/* Configure sensor for Initial setting (PLL, Clock, etc) */
+		for (i = 0; i < isx005_regs.init_reg_settings_size; ++i) {
+			rc = isx005_i2c_write(isx005_client->addr,
+				isx005_regs.init_reg_settings[i].register_address,
+				isx005_regs.init_reg_settings[i].register_value,
+				isx005_regs.init_reg_settings[i].register_length);
 
+			if (rc < 0)
+				CDBG("Something went wrong on pclk_store\n");
+            else
+                pclk_rate = value;
+		}
+	} 
+
+#if !defined(CONFIG_MACH_MSM7X27_THUNDERG) && \
+    !defined(CONFIG_MACH_MSM7X27_THUNDERA)
+    
+    else if (value == 32) {
+		/* Configure sensor for Initial setting (PLL, Clock, etc) */
+		for (i = 0; i < isx005_regs.init_reg32_settings_size; ++i) {
+			rc = isx005_i2c_write(isx005_client->addr,
+				isx005_regs.init_reg32_settings[i].register_address,
+				isx005_regs.init_reg32_settings[i].register_value,
+				isx005_regs.init_reg32_settings[i].register_length);
+
+			if (rc < 0)
+				CDBG("Something went wrong on pclk_store\n");
+            else
+                pclk_rate = value;
+		}
+	} 
+#endif
+
+    else
+		CDBG("invalid pclk rate, only 27 or 32 allowed!\n");
+	
 	printk(KERN_INFO "pclk_rate = %d\n", pclk_rate);
 	return size;
 }
@@ -1673,6 +1710,7 @@ static ssize_t mclk_store(struct device *dev, struct device_attribute *attr,
 
 	sscanf(buf, "%d", &value);
 	mclk_rate = value;
+    msm_camio_clk_rate_set(mclk_rate);
 
 	printk(KERN_INFO "mclk_rate = %d\n", mclk_rate);
 	return size;
